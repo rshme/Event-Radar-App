@@ -75,7 +75,7 @@ export default function Event({ navigation }) {
 
   const renderEventItem = ({ item }) => (
     <TouchableOpacity
-      onPress={() => console.log("Navigate to event detail")}
+      onPress={() => navigation.navigate('EventDetail', { eventId: item.id })}
     >
       <Surface style={styles.eventCard}>
         <Image source={{ uri: item.image }} style={styles.eventImage} />

@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Login from "../views/Login";
 import Event from "../views/Event";
+import EventDetail from '../views/EventDetail';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,11 @@ export default function AppNavigator() {
           name="EventCatalog"
           component={Event}
           options={{ title: "Event Catalog" }}
+        />
+        <Stack.Screen
+          name="EventDetail"
+          component={EventDetail}
+          options={{ title: "Event Detail" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
