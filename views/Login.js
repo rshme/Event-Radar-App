@@ -26,7 +26,7 @@ const theme = {
   },
 };
 
-export default function LoginScreen() {
+export default function Login({ navigation }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -52,6 +52,11 @@ export default function LoginScreen() {
           setSuccess(successMessage);
           setSnackbarVisible(true);
           setLoading(false);
+
+          // Navigate to Event Catalog after successful login
+          setTimeout(() => {
+            navigation.replace("EventCatalog");
+          }, 1000);
         },
         (errorMessage) => {
           setError(errorMessage);
